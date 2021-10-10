@@ -4,6 +4,20 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- name: tfx_version
+  value: v0.9.x
+- name: service_connection
+  value: marketplace_sc
+- name: publisher_id
+  value: NipunBahri
+- name: extension_id
+  value: custom-extension
+- name: extension_name
+  value: Custom Extension
+- name: extension_version
+  value: 1.0.2
+
 stages:
 - stage: Build_Extension
   displayName: Build Extension
@@ -15,16 +29,16 @@ stages:
       displayName: Install Tfx
       name: tfx_install
       inputs:
-        version: 'v0.9.x'
+        version: '$(tfx_version)'
 
     - task: QueryAzureDevOpsExtensionVersion@3
       displayName: Set Extension Version
       name: extension_version
       inputs:
         connectTo: 'VsTeam'
-        connectedServiceName: 'marketplace_sc'
-        publisherId: 'NipunBahri'
-        extensionId: 'custom-extension'
+        connectedServiceName: '$(service_connection)'
+        publisherId: '$(publisher_id)'
+        extensionId: '$(extension_id)'
         versionAction: 'Patch'
         outputVariable: 'Extension.Version'
 
@@ -33,10 +47,10 @@ stages:
       name: package_extension
       inputs:
         rootFolder: '$(System.DefaultWorkingDirectory)/extension'
-        publisherId: 'NipunBahri'
-        extensionId: 'custom-extension'
-        extensionName: 'Custom Extension'
-        extensionVersion: '$(Extension.Version)'
+        publisherId: '$(publisher_id)'
+        extensionId: '$(extension_id)'
+        extensionName: '$(extension_name)'
+        extensionVersion: '$(extension_version)'
         updateTasksVersion: true
         updateTasksVersionType: 'patch'
         extensionVisibility: 'private'
@@ -50,9 +64,9 @@ stages:
         connectedServiceName: 'marketplace_sc'
         fileType: 'vsix'
         vsixFile: '*.vsix'
-        publisherId: 'NipunBahri'
-        extensionId: 'custom-extension'
-        extensionName: 'Custom Extension'
+        publisherId: '$(publisher_id)'
+        extensionId: '$(extension_id)'
+        extensionName: '$(extension_name)'
         extensionVisibility: 'private'
         shareWith: 'bahrinipun'
 
