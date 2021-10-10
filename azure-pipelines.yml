@@ -32,7 +32,7 @@ stages:
       displayName: Package Extension
       name: package_extension
       inputs:
-        rootFolder: '$(System.DefaultWorkingDirectory)'
+        rootFolder: '$(System.DefaultWorkingDirectory)/extension'
         publisherId: 'NipunBahri'
         extensionId: 'custom-extension'
         extensionName: 'Custom Extension'
