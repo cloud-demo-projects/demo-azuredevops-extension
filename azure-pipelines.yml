@@ -34,7 +34,7 @@ steps:
     
 - task: PublishAzureDevOpsExtension@3
   displayName: Publish Extension
-  name: Publish_extension
+  name: publish_extension
   inputs:
     connectTo: 'VsTeam'
     connectedServiceName: 'marketplace_sc'
