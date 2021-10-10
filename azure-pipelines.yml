@@ -8,8 +8,8 @@ stages:
 - stage: Build_Extension
   displayName: Build Extension
   jobs:
-  - job: Build
-    displayName: Build
+  - job: Build_Package_Publish_Extension
+    displayName: Build Package Publish Extension
     steps:  
     - task: TfxInstaller@3
       displayName: Install Tfx
