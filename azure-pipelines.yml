@@ -32,13 +32,14 @@ stages:
       displayName: Package Extension
       name: package_extension
       inputs:
-        rootFolder: 
+        rootFolder: '$(System.DefaultWorkingDirectory)'
         publisherId: 'NipunBahri'
         extensionId: 'custom-extension'
+        extensionName: 'Custom Extension'
         extensionVersion: '$(Extension.Version)'
         updateTasksVersion: true
         updateTasksVersionType: 'patch'
-        extensionVisibility: 'private'
+        extensionVisibility: 'public'
         extensionPricing: 'free'
         
     - task: PublishAzureDevOpsExtension@3
