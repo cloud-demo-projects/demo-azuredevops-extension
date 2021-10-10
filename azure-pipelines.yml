@@ -26,13 +26,14 @@ stages:
         publisherId: 'NipunBahri'
         extensionId: 'custom-extension'
         versionAction: 'Patch'
+        outputVariable: 'version'
 
     - task: PackageAzureDevOpsExtension@3
       displayName: Package Extension
       name: package_extension
       inputs:
         rootFolder: 
-        extensionVersion: '$(Extension.Version)'
+        extensionVersion: '$(extension_version.version)'
         updateTasksVersion: false
         extensionVisibility: 'private'
         extensionPricing: 'free'
