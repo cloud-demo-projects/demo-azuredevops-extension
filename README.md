@@ -5,11 +5,12 @@ This is a sample project fordeveloping and publishing the custom Azure DevOps ex
 - Azure DevOps pipeline
 
 ## Prerequisites
-### Local Development
+### Local Development- Packaging
 - VS Code
 - Node.js 
 - TFX(extension packaging tool): npm install -g tfx-cli
-- VS Code Extensions
+
+### Local Development- Upload
 - Marketplace account
 
 ### CI/CD
