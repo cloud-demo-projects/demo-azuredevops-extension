@@ -6,12 +6,12 @@ This is a sample project fordeveloping and publishing the custom Azure DevOps ex
 - Azure DevOps pipeline to build, package & publish extension in marketplace
 
 ## Prerequisites
-### Local Development- Packaging
+### Local Development- Build & Packaging
 - VS Code
 - Node.js 
 - TFX(extension packaging tool): npm install -g tfx-cli
 
-### Local Development- Upload
+### Local Development- Marketplace Publish
 - Marketplace account
 
 ### CI/CD
