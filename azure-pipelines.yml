@@ -5,44 +5,50 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:  
-- task: TfxInstaller@3
-  displayName: Install Tfx
-  name: tfx_install
-  inputs:
-    version: 'v0.9.x'
+stages:
+- stage: Build_Extension
+  displayName: Build Extension
+  jobs:
+  - job: Build
+    displayName: Build
+    steps:  
+    - task: TfxInstaller@3
+      displayName: Install Tfx
+      name: tfx_install
+      inputs:
+        version: 'v0.9.x'
 
-- task: QueryAzureDevOpsExtensionVersion@3
-  displayName: Extension Version
-  name: extension_version
-  inputs:
-    connectTo: 'VsTeam'
-    connectedServiceName: 'marketplace_sc'
-    publisherId: 'NipunBahri'
-    extensionId: 'custom-extension'
-    versionAction: 'Patch'
+    - task: QueryAzureDevOpsExtensionVersion@3
+      displayName: Extension Version
+      name: extension_version
+      inputs:
+        connectTo: 'VsTeam'
+        connectedServiceName: 'marketplace_sc'
+        publisherId: 'NipunBahri'
+        extensionId: 'custom-extension'
+        versionAction: 'Patch'
 
-- task: PackageAzureDevOpsExtension@3
-  displayName: Package Extension
-  name: package_extension
-  inputs:
-    rootFolder: 
-    extensionVersion: '$(Extension.Version)'
-    updateTasksVersion: false
-    extensionVisibility: 'private'
-    extensionPricing: 'free'
-    
-- task: PublishAzureDevOpsExtension@3
-  displayName: Publish Extension
-  name: publish_extension
-  inputs:
-    connectTo: 'VsTeam'
-    connectedServiceName: 'marketplace_sc'
-    fileType: 'vsix'
-    vsixFile: '*.vsix'
-    publisherId: 'NipunBahri'
-    extensionId: 'custom-extension'
-    extensionName: 'Custom Extension'
-    extensionVisibility: 'private'
-    shareWith: 'bahrinipun'
+    - task: PackageAzureDevOpsExtension@3
+      displayName: Package Extension
+      name: package_extension
+      inputs:
+        rootFolder: 
+        extensionVersion: '$(Extension.Version)'
+        updateTasksVersion: false
+        extensionVisibility: 'private'
+        extensionPricing: 'free'
+        
+    - task: PublishAzureDevOpsExtension@3
+      displayName: Publish Extension
+      name: publish_extension
+      inputs:
+        connectTo: 'VsTeam'
+        connectedServiceName: 'marketplace_sc'
+        fileType: 'vsix'
+        vsixFile: '*.vsix'
+        publisherId: 'NipunBahri'
+        extensionId: 'custom-extension'
+        extensionName: 'Custom Extension'
+        extensionVisibility: 'private'
+        shareWith: 'bahrinipun'
 
