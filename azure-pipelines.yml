@@ -36,10 +36,10 @@ stages:
         publisherId: 'NipunBahri'
         extensionId: 'custom-extension'
         extensionName: 'Custom Extension'
-        extensionVersion: '$(Extension.Version)'
+        extensionVersion: '1.0.1'
         updateTasksVersion: true
         updateTasksVersionType: 'patch'
-        extensionVisibility: 'public'
+        extensionVisibility: 'private'
         extensionPricing: 'free'
         
     - task: PublishAzureDevOpsExtension@3
