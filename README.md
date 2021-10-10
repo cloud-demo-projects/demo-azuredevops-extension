@@ -2,9 +2,8 @@
 
 # Develop, Package & Publish Custom Azure DevOps Extension
 This is a sample project fordeveloping and publishing the custom Azure DevOps extension which contains-
-- Marketplace account
-- Azure DevOps interaction through PAT token
-- Azure DevOps pipeline
+- Sample extension 
+- Azure DevOps pipeline to build, package & publish extension in marketplace
 
 ## Prerequisites
 ### Local Development- Packaging
