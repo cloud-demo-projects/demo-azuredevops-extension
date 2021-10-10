@@ -1,4 +1,4 @@
-# Develop Custom Azure DvOps Extension
+# Develop & Publish Custom Azure DvOps Extension
 This is a sample project fordeveloping and publishing the custom Azure DevOps extension which contains-
 - Marketplace account
 - Azure DevOps interaction through PAT token
