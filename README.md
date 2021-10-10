@@ -9,7 +9,7 @@ This is a sample project fordeveloping and publishing the custom Azure DevOps ex
 ### Local Development- Build & Packaging
 - VS Code
 - Node.js 
-- TFX(extension packaging tool): npm install -g tfx-cli
+- TFX(extension packaging tool): npm install -g tfx-cli; npx tfx-cli extension create
 
 ### Local Development- Marketplace Publish
 - Marketplace account
