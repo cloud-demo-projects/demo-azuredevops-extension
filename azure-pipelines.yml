@@ -8,4 +8,36 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+  
+- task: TfxInstaller@3
+  inputs:
+    version: 'v0.9.x'
+
+- task: QueryAzureDevOpsExtensionVersion@3
+  inputs:
+    connectTo: 'VsTeam'
+    connectedServiceName: 'marketplace_sc'
+    publisherId: 'NipunBahri'
+    extensionId: 'custom-extension'
+    versionAction: 'Patch'
+
+- task: PackageAzureDevOpsExtension@3
+  inputs:
+    rootFolder: 
+    extensionVersion: '$(Extension.Version)'
+    updateTasksVersion: false
+    extensionVisibility: 'private'
+    extensionPricing: 'free'
+    
+- task: PublishAzureDevOpsExtension@3
+  inputs:
+    connectTo: 'VsTeam'
+    connectedServiceName: 'marketplace_sc'
+    fileType: 'vsix'
+    vsixFile: '*.vsix'
+    publisherId: 'NipunBahri'
+    extensionId: 'custom-extension'
+    extensionName: 'Custom Extension'
+    extensionVisibility: 'private'
+    shareWith: 'bahrinipun'
 
