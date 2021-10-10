@@ -61,7 +61,7 @@ stages:
       name: publish_extension
       inputs:
         connectTo: 'VsTeam'
-        connectedServiceName: 'marketplace_sc'
+        connectedServiceName: '$(service_connection)'
         fileType: 'vsix'
         vsixFile: '*.vsix'
         publisherId: '$(publisher_id)'
