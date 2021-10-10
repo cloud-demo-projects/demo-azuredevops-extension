@@ -18,5 +18,5 @@ This is a sample project fordeveloping and publishing the custom Azure DevOps ex
 ### CI/CD
 - Azure Devops Organization
 - Marketplace account
-- Azure Subscription
-- Service Principle with appropriate permissions 
+- PAT with access to marketplace & extensions
+- Marketplace service connection
