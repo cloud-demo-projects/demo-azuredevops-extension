@@ -16,7 +16,7 @@ variables:
 - name: extension_name
   value: Custom Extension
 - name: extension_version
-  value: 1.0.2
+  value: 1.0.3
 
 stages:
 - stage: Build_Extension
