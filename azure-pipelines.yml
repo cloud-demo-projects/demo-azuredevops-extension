@@ -7,10 +7,14 @@ pool:
 
 steps:  
 - task: TfxInstaller@3
+  displayName: Install Tfx
+  name: tfx_install
   inputs:
     version: 'v0.9.x'
 
 - task: QueryAzureDevOpsExtensionVersion@3
+  displayName: Extension Version
+  name: extension_version
   inputs:
     connectTo: 'VsTeam'
     connectedServiceName: 'marketplace_sc'
@@ -19,6 +23,8 @@ steps:
     versionAction: 'Patch'
 
 - task: PackageAzureDevOpsExtension@3
+  displayName: Package Extension
+  name: package_extension
   inputs:
     rootFolder: 
     extensionVersion: '$(Extension.Version)'
@@ -27,6 +33,8 @@ steps:
     extensionPricing: 'free'
     
 - task: PublishAzureDevOpsExtension@3
+  displayName: publish_extension
+  name: Publish Extension
   inputs:
     connectTo: 'VsTeam'
     connectedServiceName: 'marketplace_sc'
