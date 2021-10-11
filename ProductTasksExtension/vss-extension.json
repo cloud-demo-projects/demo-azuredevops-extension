@@ -23,6 +23,16 @@
                 "name": "My Hub",
                 "uri": "my-hub.html"
             }
+        },
+        {
+            "id": "demo-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Demo"
+            }
         }
     ],
     "files": [
@@ -34,6 +44,9 @@
             "path": "node_modules/vss-web-extension-sdk/lib",
             "addressable": true,
             "packagePath": "lib"
+        },
+        {
+            "path": "ProductTasks/Demo"
         }
     ]
 }
