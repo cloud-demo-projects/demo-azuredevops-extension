@@ -6,24 +6,16 @@
     "name": "Custom Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
-    "categories": ["Azure Repos"],
+    "categories": ["Azure Pipelines"],
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
     "contributions": [
-        {
-            "id": "my-hub",
-            "type": "ms.vss-web.hub",
-            "targets": [
-                "ms.vss-code-web.code-hub-group"
-            ],
-            "properties": {
-                "name": "My Hub",
-                "uri": "my-hub.html"
-            }
-        },
         {
             "id": "demo-task",
             "type": "ms.vss-distributed-task.task",
