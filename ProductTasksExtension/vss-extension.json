@@ -12,9 +12,6 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "icons": {
-        "default": "images/extension-icon.png"        
-    },
     "contributions": [
         {
             "id": "demo-task",
