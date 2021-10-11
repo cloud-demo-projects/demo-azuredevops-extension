@@ -46,7 +46,7 @@ stages:
       displayName: Package Extension
       name: package_extension
       inputs:
-        rootFolder: '$(System.DefaultWorkingDirectory)/extension'
+        rootFolder: '$(System.DefaultWorkingDirectory)/ProductTasksExtension'
         publisherId: '$(publisher_id)'
         extensionId: '$(extension_id)'
         extensionName: '$(extension_name)'
