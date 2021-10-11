@@ -67,6 +67,7 @@ stages:
         publisherId: '$(publisher_id)'
         extensionId: '$(extension_id)'
         extensionName: '$(extension_name)'
+        extensionVersion: '$(extension_versioning.Extension.Version)'
         extensionVisibility: 'private'
         shareWith: 'bahrinipun'
 
