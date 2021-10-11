@@ -46,7 +46,8 @@
             "packagePath": "lib"
         },
         {
-            "path": "ProductTasks/Demo"
+            "path": "ProductTasks/Demo",
+            "packagePath": "Demo"
         }
     ]
 }
