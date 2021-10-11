@@ -20,7 +20,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "Demo"
+                "name": "ProductTask"
             }
         }
     ],
@@ -31,8 +31,7 @@
             "packagePath": "lib"
         },
         {
-            "path": "ProductTasks/Demo",
-            "packagePath": "Demo"
+            "path": "ProductTask"
         }
     ]
 }
