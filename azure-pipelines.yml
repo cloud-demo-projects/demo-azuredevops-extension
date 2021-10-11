@@ -16,7 +16,7 @@ variables:
 - name: extension_name
   value: Custom Extension
 - name: extension_version
-  value: 1.0.2
+  value: 1.0.3
 
 stages:
 - stage: Build_Extension
@@ -33,7 +33,7 @@ stages:
 
     - task: QueryAzureDevOpsExtensionVersion@3
       displayName: Set Extension Version
-      name: extension_version
+      name: extension_versioning
       inputs:
         connectTo: 'VsTeam'
         connectedServiceName: '$(service_connection)'
@@ -50,7 +50,7 @@ stages:
         publisherId: '$(publisher_id)'
         extensionId: '$(extension_id)'
         extensionName: '$(extension_name)'
-        extensionVersion: '$(extension_version)'
+        extensionVersion: '$(extension_versioning.Extension.Version)'
         updateTasksVersion: true
         updateTasksVersionType: 'patch'
         extensionVisibility: 'private'
@@ -61,7 +61,7 @@ stages:
       name: publish_extension
       inputs:
         connectTo: 'VsTeam'
-        connectedServiceName: 'marketplace_sc'
+        connectedServiceName: '$(service_connection)'
         fileType: 'vsix'
         vsixFile: '*.vsix'
         publisherId: '$(publisher_id)'

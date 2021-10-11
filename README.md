@@ -2,17 +2,16 @@
 
 # Develop, Package & Publish Custom Azure DevOps Extension
 This is a sample project fordeveloping and publishing the custom Azure DevOps extension which contains-
-- Marketplace account
-- Azure DevOps interaction through PAT token
-- Azure DevOps pipeline
+- Sample extension 
+- Azure DevOps pipeline to build, package & publish extension in marketplace
 
 ## Prerequisites
-### Local Development- Packaging
+### Local Development- Build & Packaging
 - VS Code
 - Node.js 
-- TFX(extension packaging tool): npm install -g tfx-cli
+- TFX(extension packaging tool): npm install -g tfx-cli; npx tfx-cli extension create
 
-### Local Development- Upload
+### Local Development- Marketplace Publish
 - Marketplace account
 
 ### CI/CD
