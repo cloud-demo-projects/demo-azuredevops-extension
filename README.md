@@ -2,7 +2,7 @@
 
 # Develop, Package & Publish Custom Azure DevOps Extension
 This is a sample project for developing and publishing the custom Azure DevOps extension which contains-
-- Sample extension 
+- Extension code 
 - Azure DevOps pipeline to build, package & publish extension in marketplace
 
 ## Prerequisites
